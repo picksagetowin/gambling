@@ -1,18 +1,20 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-import os
+from pydantic import BaseModel
+from datetime import datetime
 
-SQLALCHEMY_DATABASE_URL = os.getenv("DB_URL")
+class UserCreate(BaseModel):
+    id: str
+    nickname: str
+    tag: str
+    password: str
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+class UserResponse(BaseModel):
+    id: str
+    nickname: str
+    tag: str
+    puuid: str
+    money: int
+    is_active: bool
+    created_at: datetime
 
-Base = declarative_base()
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+    class Config:
+        from_attributes = True

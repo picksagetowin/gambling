@@ -14,3 +14,9 @@ class User(Base):
     is_active = Column(Boolean, nullable=False, default=False)
     money = Column(Integer, nullable=False, default=0)
     created_at = Column(DateTime, default=func.now())
+
+class Code(Base):
+    __tablename__ = 'codes'
+
+    activated_code = Column(String, nullable=True)
+    expired_code = Column(String, nullable=True)

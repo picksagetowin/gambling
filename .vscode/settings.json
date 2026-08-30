@@ -1,3 +1,4 @@
 {
-    "workbench.settings.useSplitJSON": true
+    "workbench.settings.useSplitJSON": true,
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

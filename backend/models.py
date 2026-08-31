@@ -18,5 +18,6 @@ class User(Base):
 class Code(Base):
     __tablename__ = 'codes'
 
-    activated_code = Column(String, nullable=True)
+    activated_code = Column(String, nullable=True, primary_key=True)
+    used_code = Column(String, nullable=True)
     expired_code = Column(String, nullable=True)

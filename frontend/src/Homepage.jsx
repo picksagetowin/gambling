@@ -16,6 +16,9 @@ function Homepage(){
                 <div className='hero-left'>
                     <h1>11</h1>
                 </div>
+                <div className='hero-right'>
+                    <img src='/logo3d.png' alt='3d로고' className='logo3d' />
+                </div>
             </div>
 
         </div>

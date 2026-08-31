@@ -1,6 +1,6 @@
 from sqlalchemy import Integer, String, Boolean, DateTime
 from sqlalchemy import func
-from sqlalchemy.sql.schema import Column
+from sqlalchemy import Column
 from database import Base
 
 class User(Base):
@@ -18,6 +18,6 @@ class User(Base):
 class Code(Base):
     __tablename__ = 'codes'
 
-    activated_code = Column(String, nullable=True, primary_key=True)
-    used_code = Column(String, nullable=True)
-    expired_code = Column(String, nullable=True)
+    code = Column(String, primary_key=True, nullable=False)
+    status = Column(String, nullable=False, default='active')
+    used_by = Column(String, nullable=True)

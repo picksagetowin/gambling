@@ -6,7 +6,7 @@
 .main {
     max-width: 100%;
     height: 100vh;
-    background-color: #0A0B18;
+    background-color: #090a10;
 
     
 }
@@ -93,3 +93,35 @@
     display: flex;
 }
 
+.notice-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  box-sizing: border-box;
+
+}
+
+.notice-banner {
+    background: #0d0f1b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notice-icon {
+  width: 18px;
+  height: 18px;
+  color: #ff4d00;
+  flex-shrink: 0;
+}
+
+.notice-word {
+  color: #ff4d00;
+  /* background-color: rgba(255, 77, 0, 0.1); */
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}

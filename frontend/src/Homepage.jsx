@@ -8,7 +8,7 @@ function Homepage(){
                 </div>
                 <div className='buttons'>
                     <button className='inquiry'>문의하기</button>
-                    <button className='start'>지금 무료로 플레이하기</button>
+                    <button className='start' >지금 무료로 플레이하기</button>
                 </div>
             </div>
 

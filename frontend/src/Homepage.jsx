@@ -8,7 +8,7 @@ function Homepage(){
                 </div>
                 <div className='buttons'>
                     <button className='inquiry'>문의하기</button>
-                    <button className='start' >지금 무료로 플레이하기</button>
+                    <button className='start'>지금 무료로 플레이하기</button>
                 </div>
             </div>
 
@@ -31,6 +31,16 @@ function Homepage(){
                                 <path d='M11.6 16.8a3 3 0 1 1-5.8-1.6' />
                             </svg> */}
                             <span className='notice-word'>공지사항</span>
+                            <span className='divider'>|</span>
+                            <span className='notice'>1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className='games'>
+                    <div className='game-banner'>
+                        <div className='game-card'>
+                            1
                         </div>
                     </div>
                 </div>

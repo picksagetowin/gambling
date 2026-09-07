@@ -1,8 +1,8 @@
 import './Homepage.css'
 function Homepage(){
     return(
-        <div className='main'>
-            <div className="header">
+        <main className='main'>
+            <header className="header">
                 <div className='logo'>
                     <img src='/logo.png' alt='로고' className='logo-img'/>  
                 </div>
@@ -10,18 +10,18 @@ function Homepage(){
                     <button className='inquiry'>문의하기</button>
                     <button className='start'>지금 무료로 플레이하기</button>
                 </div>
-            </div>
+            </header>
 
-            <div className='hero'>
+            <section className='hero'>
                 <div className='hero-left'>
                     <h1>11</h1>
                 </div>
                 <div className='hero-right'>
                     <img src='/logo3d.png' alt='3d로고' className='logo3d' />
                 </div>
-            </div>
+            </section>
 
-            <div className='info'>
+            <section className='info'>
                 <div className='notice-container'>
                     <div className='notice-banner'>
                         <div className='notice-left'>
@@ -37,16 +37,28 @@ function Homepage(){
                     </div>
                 </div>
                 
-                <div className='games'>
-                    <div className='game-banner'>
-                        <div className='game-card'>
-                            1
+                <section className='dashboard'>
+                    <div className='games'>
+                        <div className='game-banner'>
+                            <div className='banner-header'>
+                                <h3>
+                                    <span className='game-icon'>❓</span>
+                                    인기 게임
+                                </h3>
+                            </div>
+                            <div className='game-cards'>
+                                <div className='game-card'>
+                                    <img src='' alt='게임사진' />
+                                    <h4>확률게임</h4>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+            </section>
 
-        </div>
+        </main>
     )
 }
 

@@ -5,8 +5,9 @@
 
 .main {
     max-width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #090a10;
+
 }
 
 .header {
@@ -137,9 +138,16 @@
     padding: 8px;
 }
 
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    gap: 16px; 
+    margin-bottom: 24px;
+}
+
 .games {
     width: 100%;
-    height: 100px;
     background-color: purple;
     display: flex;
     align-items: center;
@@ -147,17 +155,31 @@
 }
 
 .game-banner {
-    background-color: red;
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+    background: #0d0f1b;
+    border: 1px solid #1c2033; 
+    border-radius: 12px;
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
 
+.game-card h4 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    /* color: #ffffff; */
 }
 
 .game-card {
-    width: 50%;
-    background-color: blue;
+    background: #121524; 
+    border: 1px solid #1c2033; 
+    border-radius: 8px; 
+    padding: 12px;
+    text-align: center; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 130px;
+    max-width: 180px;
 }

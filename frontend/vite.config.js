@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     allowedHosts: [
-      'healthy-entered-necessarily-packs.trycloudflare.com' // 에러 창에 뜬 주소 추가
+      'actively-man-nvidia-food.trycloudflare.com' // 에러 창에 뜬 주소 추가
     ]
   }
 })

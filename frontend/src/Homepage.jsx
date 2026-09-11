@@ -42,14 +42,44 @@ function Homepage(){
                         <div className='game-banner'>
                             <div className='banner-header'>
                                 <h3>
-                                    <span className='game-icon'>❓</span>
+                                    <span className='games-icon'>❓</span>
                                     인기 게임
                                 </h3>
                             </div>
                             <div className='game-cards'>
                                 <div className='game-card'>
-                                    <img src='' alt='게임사진' />
-                                    <h4>확률게임</h4>
+                                    <div className='game-img'>
+                                        <img src='maingame.png' alt='게임사진' />
+                                    </div>
+                                    <div className='game-details'>
+                                        <h4>확률게임</h4>
+                                    </div>
+                                </div>
+
+                                <div className='game-card'>
+                                    <div className='game-img'>
+                                        <img src='' alt='게임사진' />
+                                    </div>
+                                    <div className='game-details'>
+                                        <h4>게임 준비중</h4>
+                                    </div>
+                                </div>
+
+                                <div className='game-card'>
+                                    <div className='game-img'>
+                                        <img src='' alt='게임사진' />
+                                    </div>
+                                    <div className='game-details'>
+                                        <h4>게임 준비중</h4>
+                                    </div>
+                                </div>
+                                <div className='game-card'>
+                                    <div className='game-img'>
+                                        <img src='' alt='게임사진' />
+                                    </div>
+                                    <div className='game-details'>
+                                        <h4>게임 준비중</h4>
+                                    </div>
                                 </div>
                                 
                             </div>
@@ -57,7 +87,6 @@ function Homepage(){
                     </div>
                 </section>
             </section>
-
         </main>
     )
 }

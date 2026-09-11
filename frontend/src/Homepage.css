@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .main {
@@ -94,12 +95,11 @@
 }
 
 .notice-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 8px 16px;
-  box-sizing: border-box;
-
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    box-sizing: border-box;
 }
 
 .notice-banner {
@@ -113,19 +113,19 @@
 }
 
 .notice-icon {
-  width: 18px;
-  height: 18px;
-  color: #ff4d00;
-  flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: #ff4d00;
+    flex-shrink: 0;
 }
 
 .notice-word {
-  color: #ff4d00;
-  /* background-color: rgba(255, 77, 0, 0.1); */
-  font-weight: bold;
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 4px;
+    color: #ff4d00;
+    /* background-color: rgba(255, 77, 0, 0.1); */
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
 }
 
 .divider {
@@ -144,14 +144,18 @@
     justify-content: space-between;  
     gap: 16px; 
     margin-bottom: 24px;
+    height: 250px;
+    background-color: yellow;
 }
 
 .games {
-    width: 100%;
+    width: 40%;
+    height: 100%;
     background-color: purple;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .game-banner {
@@ -161,13 +165,27 @@
     padding: 20px; 
     display: flex; 
     flex-direction: column; 
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%; 
+}
+
+.banner-header {
+    /* background-color: blue; */
+    color: #E0E0E6;
+    padding-bottom: 8px;
+}
+
+.game-cards{
+    height: 100%;
+    display: flex;
     justify-content: space-between;
 }
 
 .game-card h4 {
     margin: 0 0 4px;
     font-size: 13px;
-    /* color: #ffffff; */
+    color: #E0E0E6;
 }
 
 .game-card {
@@ -180,6 +198,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 130px;
-    max-width: 180px;
+    width: 150px;
+    height: 100%;
+    transition: transform 0.2 ease;
+}
+
+.game-card:hover{
+    border: 2px solid #ff4d00;
+    transform: translateY(-6px);
+}
+
+.game-img{
+    /* background-color: orange; */
+    width:50%;
+}
+
+.game-img img{
+    width: 100%;
 }

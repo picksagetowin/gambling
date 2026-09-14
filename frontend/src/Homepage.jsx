@@ -44,7 +44,7 @@ function Homepage(){
                             <div className='banner'>
                                 <div className='banner-header'>
                                     <h3>
-                                        <span className='games-icon'>❓</span>
+                                        <span className='games-icon'>🎲</span>
                                         인기 게임
                                     </h3>
                                 </div>

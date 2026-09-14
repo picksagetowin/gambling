@@ -94,7 +94,6 @@ function Homepage(){
                                         <span className='ranking-icon' aria-hidden='true'>🏆</span>
                                         실시간 랭킹
                                     </h3>
-                                    <span className='ranking-period'>이번 라운드</span>
                                 </div>
  
                                 <div className='top-players' role='list' aria-label='실시간 랭킹 상위 3명'>

@@ -14,10 +14,25 @@ function Homepage(){
 
             <section className='hero'>
                 <div className='hero-left'>
-                    <h1>11</h1>
+                    <div className='hero-badge'>
+                        <span aria-hidden='true'>🔥</span> 
+                        공정한 게임, 투명한 결과
+                    </div>
+                    <h1>
+                        운을 넘어,
+                        <br />
+                        <span>기회를</span> 
+                        잡아라
+                    </h1>
+                    <p className='hero-description'>공정한 게임, 투명한 결과, 짜릿한 플레이</p>
+                    <div className='hero-actions'>
+                        <button className='hero-start' type='button'>지금 무료로 플레이하기</button>
+                        <button className='hero-game-guide' type='button'>게임 가이드</button>
+                    </div>
+                    
                 </div>
                 <div className='hero-right'>
-                    <img src='/logo3d.png' alt='3d로고' className='logo3d' />
+                    <img src='/logo3d.png' alt='빛나는 칩과 주사위' className='logo3d' />
                 </div>
             </section>
 

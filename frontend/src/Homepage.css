@@ -8,7 +8,6 @@
     max-width: 100%;
     min-height: 100vh;
     background-color: #090a10;
-
 }
 
 .header {
@@ -141,11 +140,22 @@
 .dashboard {
     display: flex;
     align-items: center;
-    justify-content: space-between;  
+    justify-content: center;  
     gap: 16px; 
     margin-bottom: 24px;
     height: 250px;
     background-color: yellow;
+
+}
+
+.dashboard-container{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: pink;
 }
 
 .games {
@@ -158,7 +168,7 @@
     margin: 0 auto;
 }
 
-.game-banner {
+.banner {
     background: #0d0f1b;
     border: 1px solid #1c2033; 
     border-radius: 12px;
@@ -215,4 +225,116 @@
 
 .game-img img{
     width: 100%;
+}
+
+.ranking{
+    background-color: transparent;
+    height: 100%;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.banner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.ranking-period {
+    color: #8c91a4;
+    font-size: 10px;
+}
+
+.top-players{
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+    gap: 6px;
+    padding: 8px 8px 0;
+    border-radius: 10px;
+    background-color: mediumspringgreen;
+}
+
+.podium {
+    display: flex;
+    flex-shrink: 0;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    padding-top: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.player{
+    background-color: gray;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    padding: 6px 3px 0;
+}
+
+.first-player {
+    order: 2;
+    background-color: rgba(255, 190, 65, 0.24);
+}
+
+.second-player {
+    order: 1;
+    background-color: rgba(205, 216, 230, 0.28);
+}
+
+.third-player {
+    order: 3;
+    background-color: rgba(198, 120, 76, 0.26);
+}
+
+.medal {
+    margin-bottom: 3px;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.player-name {
+    overflow: hidden;
+    max-width: 100%;
+    display: flex;
+    color: #E0E0E6;
+    font-size: 9px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.player-money {
+    margin: 2px 0 6px;
+    color: #E0E0E6;
+    font-size: 9px;
+}
+
+.podium.second-place {
+    height: 52px;
+    color: #f2f4f8;
+    background: linear-gradient(180deg, #aab5c5, #626f82);
+}
+
+.podium.first-place {
+    height: 72px;
+    color: #fff0c2;
+    background: linear-gradient(180deg, #ffc34d, #bb6a00);
+}
+
+.podium.third-place {
+    height: 42px;
+    color: #ffe0c8;
+    background: linear-gradient(180deg, #cf8a5e, #804628);
 }

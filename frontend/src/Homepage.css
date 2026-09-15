@@ -369,7 +369,7 @@
 }
 
 .player{
-    background-color: gray;
+    /* background-color: gray; */
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -383,17 +383,17 @@
 
 .first-player {
     order: 2;
-    background-color: rgba(255, 190, 65, 0.24);
+    /* background-color: rgba(255, 190, 65, 0.24); */
 }
 
 .second-player {
     order: 1;
-    background-color: rgba(205, 216, 230, 0.28);
+    /* background-color: rgba(205, 216, 230, 0.28); */
 }
 
 .third-player {
     order: 3;
-    background-color: rgba(198, 120, 76, 0.26);
+    /* background-color: rgba(198, 120, 76, 0.26); */
 }
 
 .medal {
@@ -461,4 +461,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.footer {
+    background-color: red;
+    width: 100%;
+    height: 100px;
 }

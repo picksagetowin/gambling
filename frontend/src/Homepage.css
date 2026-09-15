@@ -241,7 +241,6 @@
     margin-bottom: 24px;
     height: 250px;
     background-color: yellow;
-
 }
 
 .dashboard-container{
@@ -252,16 +251,18 @@
     display: flex;
     flex-direction: row;
     background-color: pink;
+    gap: 12px;
 }
 
 .games {
-    width: 37%;
+    width: auto;
     height: 100%;
     background-color: purple;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    flex: 37;
 }
 
 .banner {
@@ -326,8 +327,9 @@
 .ranking{
     background-color: transparent;
     height: 100%;
-    width: 25%;
+    width: auto;
     margin: 0 auto;
+    flex: 25;
 }
 
 .banner-header {
@@ -433,4 +435,30 @@
     height: 42px;
     color: #ffe0c8;
     background: linear-gradient(180deg, #cf8a5e, #804628);
+}
+
+
+.ad {
+    width: auto;
+    height: 100%;
+    flex: 38;
+}
+
+.game-ad {
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #E0E0E6;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+}
+
+.game-ad img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

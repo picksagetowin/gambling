@@ -134,6 +134,14 @@ function Homepage(){
 
                             </div>
                         </div>
+                        <div className='ad'>
+                            <a
+                                className='banner game-ad'
+                                href='https://papversus.com'
+                            >
+                                <img src='papversus.png'></img>
+                            </a>
+                        </div>
                     </div>
                 </section>
             

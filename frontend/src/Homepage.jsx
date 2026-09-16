@@ -135,18 +135,49 @@ function Homepage(){
                             </div>
                         </div>
                         <div className='ad'>
-                            <a
-                                className='banner game-ad'
-                                href='https://papversus.com'
-                            >
-                                <img src='papversus.png'></img>
-                            </a>
+                            <div className='banner'>
+                                <div className='banner-header'>
+                                    <h3>서버 제공자 광고</h3>
+                                </div>
+                                <a className='game-ad' href='https://papversus.com'>
+                                    <img src='papversus.png' alt='서버 제공자 광고' />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
-                
-                <footer className='footer'>
 
+                <footer className='footer'>
+                    <div className='footer-container'>
+                        <div className='footer-brand'>
+                            <img src='/logo.png' alt='서비스 로고' className='footer-logo' />
+                            <p>공정하고 투명한 게임 환경을 제공합니다.<br />건전한 게임 문화를 함께 만듭니다.</p>
+                        </div>
+                        <div className='footer-links'>
+                            <div>
+                                <h4>서비스</h4>
+                                <span>게임</span>
+                                <span>랭킹</span>
+                                <span>보상</span>
+                                <span>이벤트</span>
+                            </div>
+                            <div>
+                                <h4>고객지원</h4>
+                                <span>공지사항</span>
+                                <span>자주 묻는 질문</span>
+                                <span>문의하기</span>
+                                <span>이용약관</span>
+                            </div>
+                            <div>
+                                <h4>정보</h4>
+                                <span>회사 소개</span>
+                                <span>개인정보처리방침</span>
+                                <span>책임의 한계</span>
+                                <span>게임 이용 안내</span>
+                            </div>
+                        </div>
+                        <p className='footer-copyright'>© 2024 Your Service. All rights reserved.</p>
+                    </div>
                 </footer>
         </main>
     )

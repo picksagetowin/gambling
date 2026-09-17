@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import './Homepage.css'
 function Homepage(){
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
+
     return(
         <main className='main'>
             <header className="header">
@@ -8,7 +11,7 @@ function Homepage(){
                 </div>
                 <div className='buttons'>
                     <button className='inquiry'>문의하기</button>
-                    <button className='start'>지금 무료로 플레이하기</button>
+                    <button className='start' type='button' onClick={() => setIsLoginModalOpen(true)}>지금 무료로 플레이하기</button>
                 </div>
             </header>
 
@@ -26,7 +29,7 @@ function Homepage(){
                     </h1>
                     <p className='hero-description'>공정한 게임, 투명한 결과, 짜릿한 플레이</p>
                     <div className='hero-actions'>
-                        <button className='hero-start' type='button'>지금 무료로 플레이하기</button>
+                        <button className='hero-start' type='button' onClick={() => setIsLoginModalOpen(true)}>지금 무료로 플레이하기</button>
                         <button className='hero-game-guide' type='button'>제작 정보</button>
                     </div>
                     
@@ -179,6 +182,77 @@ function Homepage(){
                         <p className='footer-copyright'>© 2024 Your Service. All rights reserved.</p>
                     </div>
                 </footer>
+
+                {isLoginModalOpen && (
+                    <div
+                        className='login-modal-overlay'
+                        role='presentation'
+                        onMouseDown={() => setIsLoginModalOpen(false)}
+                    >
+                        <section
+                            className='login-modal'
+                            role='dialog'
+                            aria-modal='true'
+                            aria-labelledby='login-modal-title'
+                            onMouseDown={(event) => event.stopPropagation()}
+                        >
+                            <button
+                                className='login-modal-close'
+                                type='button'
+                                aria-label='로그인 모달 닫기'
+                                onClick={() => setIsLoginModalOpen(false)}
+                            >
+                                ×
+                            </button>
+
+                            <div className='login-modal-header'>
+                                <img src='/logo.png' alt='' className='login-modal-logo' />
+                                <h2 id='login-modal-title'><span aria-hidden='true'>✦</span> 로그인 <span aria-hidden='true'>✦</span></h2>
+                                <p>로그인하여 게임을 즐기세요!</p>
+                            </div>
+
+                            <form className='login-form' onSubmit={(event) => event.preventDefault()}>
+                                <label className='login-label' htmlFor='login-id'>이메일 또는 아이디</label>
+                                <div className='login-field'>
+                                    <svg aria-hidden='true' viewBox='0 0 24 24'>
+                                        <circle cx='12' cy='8' r='4' />
+                                        <path d='M4 20c0-4 3.6-6 8-6s8 2 8 6' />
+                                    </svg>
+                                    <input id='login-id' 
+                                    name='id' 
+                                    autoComplete='username' 
+                                    placeholder='아이디를 입력하세요' />
+                                </div>
+
+                                <label className='login-label' htmlFor='login-password'>비밀번호</label>
+                                <div className='login-field'>
+                                    <svg aria-hidden='true' viewBox='0 0 24 24'>
+                                        <rect x='5' y='10' width='14' height='10' rx='2' />
+                                        <path d='M8 10V7a4 4 0 0 1 8 0v3M12 14v3' />
+                                    </svg>
+                                    <input 
+                                    id='login-password' 
+                                    name='password' 
+                                    type='password'
+                                    autoComplete='current-password' 
+                                    placeholder='비밀번호를 입력하세요' />
+                                </div>
+
+                                <div className='login-options'>
+                                    <label className='login-remember'>
+                                        <input type='checkbox'/>
+                                        <span>로그인 상태 유지</span>
+                                    </label>
+                                    <button type='button' className='login-password-link'>비밀번호 찾기</button>
+                                </div>
+
+                                <button className='login-submit' type='submit'>로그인</button>
+                            </form>
+
+                            <p className='login-signup'>계정이 없으신가요? <button type='button'>회원가입</button></p>
+                        </section>
+                    </div>
+                )}
         </main>
     )
 }

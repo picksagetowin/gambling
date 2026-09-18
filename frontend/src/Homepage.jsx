@@ -54,10 +54,10 @@ function Homepage(){
                         공정한 게임, 투명한 결과
                     </div>
                     <h1>
-                        운을 넘어,
+                        Gambling
                         <br />
-                        <span>기회를</span> 
-                        잡아라
+                        <span>Web</span> 
+                        site
                     </h1>
                     <p className='hero-description'>공정한 게임, 투명한 결과, 짜릿한 플레이</p>
                     <div className='hero-actions'>
@@ -203,7 +203,7 @@ function Homepage(){
                             </div>
                             <div>
                                 <h4>정보</h4>
-                                <span>회사 소개</span>
+                                <span>개발자 소개</span>
                                 <span>개인정보처리방침</span>
                                 <span>게임 이용 안내</span>
                             </div>

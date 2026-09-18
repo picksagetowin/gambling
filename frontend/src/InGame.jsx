@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { API_ORIGIN } from './api.js'
+import './InGame.css'
 
 function InGame() {
     const [user, setUser] = useState(null)
@@ -26,7 +27,7 @@ function InGame() {
             <dl>
                 <dt>아이디</dt><dd>{user.id}</dd>
                 <dt>태그</dt><dd>{user.tag}</dd>
-                <dt>보유 포인트</dt><dd>{user.money.toLocaleString()} P</dd>
+                <dt>보유 머니</dt><dd>{user.money.toLocaleString()} P</dd>
             </dl>
             <button type='button' onClick={async () => {
                 const response = await fetch(`${API_ORIGIN}/auth/logout`, {

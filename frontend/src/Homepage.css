@@ -590,11 +590,6 @@
     line-height: 1.2;
 }
 
-.login-modal-header h2 span {
-    color: #ff6b1a;
-    font-size: 18px;
-}
-
 .login-modal-header p {
     color: #c4c5d0;
     font-size: 14px;
@@ -689,14 +684,22 @@
 }
 
 .login-password-link,
-.login-signup button {
+.login-signup a {
     padding: 0;
     border: 0;
     background: transparent;
     color: #ff7a1a;
     font: inherit;
     font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
+}
+
+.login-password-link:hover,
+.login-signup a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
 .login-submit {
@@ -710,6 +713,14 @@
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+}
+
+.login-error {
+    margin: 0 0 12px;
+    color: #ef5350;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: center;
 }
 
 .login-signup {

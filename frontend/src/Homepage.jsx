@@ -2,6 +2,35 @@ import { useState } from 'react'
 import './Homepage.css'
 function Homepage(){
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
+    const [loginError, setLoginError] = useState('')
+    const [isLoggingIn, setIsLoggingIn] = useState(false)
+
+    async function handleLogin(event) {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        setLoginError('')
+        setIsLoggingIn(true)
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: formData.get('id'),
+                    password: formData.get('password'),
+                }),
+            })
+            const result = await response.json().catch(() => ({}))
+            if (!response.ok) throw new Error(result.detail || '로그인에 실패했습니다.')
+
+            setIsLoginModalOpen(false)
+            window.alert(`${result.nickname}님, 환영합니다!`)
+        } catch (error) {
+            setLoginError(error.message)
+        } finally {
+            setIsLoggingIn(false)
+        }
+    }
 
     return(
         <main className='main'>
@@ -161,13 +190,11 @@ function Homepage(){
                                 <h4>서비스</h4>
                                 <span>게임</span>
                                 <span>랭킹</span>
-                                <span>보상</span>
                                 <span>이벤트</span>
                             </div>
                             <div>
                                 <h4>고객지원</h4>
                                 <span>공지사항</span>
-                                <span>자주 묻는 질문</span>
                                 <span>문의하기</span>
                                 <span>이용약관</span>
                             </div>
@@ -175,11 +202,10 @@ function Homepage(){
                                 <h4>정보</h4>
                                 <span>회사 소개</span>
                                 <span>개인정보처리방침</span>
-                                <span>책임의 한계</span>
                                 <span>게임 이용 안내</span>
                             </div>
                         </div>
-                        <p className='footer-copyright'>© 2024 Your Service. All rights reserved.</p>
+                        <p className='footer-copyright'>© 2026 Your Service. All rights reserved.</p>
                     </div>
                 </footer>
 
@@ -207,11 +233,11 @@ function Homepage(){
 
                             <div className='login-modal-header'>
                                 <img src='/logo.png' alt='' className='login-modal-logo' />
-                                <h2 id='login-modal-title'><span aria-hidden='true'>✦</span> 로그인 <span aria-hidden='true'>✦</span></h2>
+                                <h2 id='login-modal-title'> 로그인 </h2>
                                 <p>로그인하여 게임을 즐기세요!</p>
                             </div>
 
-                            <form className='login-form' onSubmit={(event) => event.preventDefault()}>
+                            <form className='login-form' onSubmit={handleLogin}>
                                 <label className='login-label' htmlFor='login-id'>이메일 또는 아이디</label>
                                 <div className='login-field'>
                                     <svg aria-hidden='true' viewBox='0 0 24 24'>
@@ -221,6 +247,7 @@ function Homepage(){
                                     <input id='login-id' 
                                     name='id' 
                                     autoComplete='username' 
+                                    required
                                     placeholder='아이디를 입력하세요' />
                                 </div>
 
@@ -235,6 +262,7 @@ function Homepage(){
                                     name='password' 
                                     type='password'
                                     autoComplete='current-password' 
+                                    required
                                     placeholder='비밀번호를 입력하세요' />
                                 </div>
 
@@ -243,13 +271,14 @@ function Homepage(){
                                         <input type='checkbox'/>
                                         <span>로그인 상태 유지</span>
                                     </label>
-                                    <button type='button' className='login-password-link'>비밀번호 찾기</button>
+                                    <a type='button' className='login-password-link'>비밀번호 찾기</a>
                                 </div>
 
-                                <button className='login-submit' type='submit'>로그인</button>
+                                {loginError && <p className='login-error' role='alert'>{loginError}</p>}
+                                <button className='login-submit' type='submit' disabled={isLoggingIn}>{isLoggingIn ? '로그인 중...' : '로그인'}</button>
                             </form>
 
-                            <p className='login-signup'>계정이 없으신가요? <button type='button'>회원가입</button></p>
+                            <p className='login-signup'>계정이 없으신가요? <a className='' href='naver.com'>회원가입</a></p>
                         </section>
                     </div>
                 )}

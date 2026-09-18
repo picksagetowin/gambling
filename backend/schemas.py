@@ -7,6 +7,10 @@ class UserCreate(BaseModel):
     tag: str
     password: str
 
+class LoginRequest(BaseModel):
+    id: str
+    password: str
+
 class UserResponse(BaseModel):
     id: str
     nickname: str

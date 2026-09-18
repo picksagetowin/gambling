@@ -1,10 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from datetime import datetime
 
 class UserCreate(BaseModel):
     id: str
     nickname: str
-    tag: str
+    tag: str = Field(max_length=5)
     password: str
 
 class LoginRequest(BaseModel):

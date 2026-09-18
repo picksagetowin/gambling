@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { API_ORIGIN } from './api.js'
 import './Homepage.css'
 function Homepage(){
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
     const [loginError, setLoginError] = useState('')
     const [isLoggingIn, setIsLoggingIn] = useState(false)
+    const navigate = useNavigate()
 
     async function handleLogin(event) {
         event.preventDefault()
@@ -12,9 +15,10 @@ function Homepage(){
         setIsLoggingIn(true)
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/auth/login', {
+            const response = await fetch(`${API_ORIGIN}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
                 body: JSON.stringify({
                     id: formData.get('id'),
                     password: formData.get('password'),
@@ -23,8 +27,7 @@ function Homepage(){
             const result = await response.json().catch(() => ({}))
             if (!response.ok) throw new Error(result.detail || '로그인에 실패했습니다.')
 
-            setIsLoginModalOpen(false)
-            window.alert(`${result.nickname}님, 환영합니다!`)
+            navigate('/ingame')
         } catch (error) {
             setLoginError(error.message)
         } finally {

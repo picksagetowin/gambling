@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import IntegrityError
 import models, schemas
 import uuid
 import base64
@@ -46,7 +47,11 @@ def create_user(db: Session, user: schemas.UserCreate):
         puuid=str(uuid.uuid4())
     )
     db.add(db_user)
-    db.commit()
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        return None
     db.refresh(db_user)
     return db_user
 

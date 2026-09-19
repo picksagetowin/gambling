@@ -24,18 +24,20 @@ function InGame() {
 
     return (
         <main className='ingame'>
-            <dl>
-                <dt>아이디</dt><dd>{user.id}</dd>
-                <dt>태그</dt><dd>{user.tag}</dd>
-                <dt>보유 머니</dt><dd>{user.money.toLocaleString()} P</dd>
-            </dl>
-            <button type='button' onClick={async () => {
+            <header className='header'>
+                <div className='logo'>
+                    <img src='/logo.png' alt='로고' />
+                </div>
+                <button ></button>
+                <button onClick={async () => {
                 const response = await fetch(`${API_ORIGIN}/auth/logout`, {
                     method: 'POST',
                     credentials: 'include',
                 })
                 if (response.ok) navigate('/', { replace: true })
             }}>로그아웃</button>
+            </header>
+            
         </main>
     )
 }
